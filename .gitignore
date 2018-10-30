@@ -1,0 +1,33 @@
+# 不提交敏感信息，如数据库权限。建议提交示例文件，如application.properties.exmaple
+**/application.properties
+**/application.yml
+
+# 不提交编译后文件
+build
+bin
+out
+
+# Eclipse / STS 
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# gradle
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
