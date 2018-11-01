@@ -21,12 +21,15 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
-
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
-	implementation('org.springframework.boot:spring-boot-starter-webflux')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	testImplementation('io.projectreactor:reactor-test')
+    implementation('javax.servlet:javax.servlet-api:3.1.0')
+    implementation('com.github.jhonnymertz:java-wkhtmltopdf-wrapper:1.1.4-RELEASE')
+    implementation('ognl:ognl:3.0.8')
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    implementation('org.springframework.boot:spring-boot-starter-webflux')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('io.projectreactor:reactor-test')
 }
