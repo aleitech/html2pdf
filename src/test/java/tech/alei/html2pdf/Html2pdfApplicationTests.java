@@ -37,30 +37,27 @@ public class Html2pdfApplicationTests {
 
     @Test
     public void toHtml() {
-        String jsonData = getTestJson();
+        String jsonData = JsonToHtmlUtil.getJsonFromFile();
         String html = JsonToHtmlUtil.getHtml(jsonData, "origin-flight-query");
         System.out.println(html);
     }
 
     @Test
+    public void toHtmlFromString() {
+        String jsonData = JsonToHtmlUtil.getJsonFromFile();
+        String template = JsonToHtmlUtil.getTemplateFromFile();
+        String html = JsonToHtmlUtil.getHtmlFromString(jsonData, template);
+
+        System.out.println(html);
+    }
+
+    @Test
     public void toPdf() {
-        String jsonData = getTestJson();
+        String jsonData = JsonToHtmlUtil.getJsonFromFile();
         String html = JsonToHtmlUtil.getHtml(jsonData, "origin-flight-query");
 
         String fileName = "C:\\space\\911test.pdf";
         HtmlToPdfUtil.toPdfFile(html, fileName);
     }
 
-    public static String getTestJson() {
-        String text = "";
-        Resource resource = new ClassPathResource("origin-flight-query.json");
-        File file = null;
-        try {
-            file = resource.getFile();
-            text = new String(Files.readAllBytes(file.toPath()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return text;
-    }
 }
