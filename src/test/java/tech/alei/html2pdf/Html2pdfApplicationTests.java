@@ -56,6 +56,7 @@ public class Html2pdfApplicationTests {
         String jsonData = JsonToHtmlUtil.getJsonFromFile();
         String html = JsonToHtmlUtil.getHtml(jsonData, "origin-flight-query");
 
+        // 需要修改成本机的路径
         String fileName = "C:\\space\\911test.pdf";
         HtmlToPdfUtil.toPdfFile(html, fileName);
     }
